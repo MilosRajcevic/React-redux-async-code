@@ -1,0 +1,13 @@
+node_modules
+dist
+.DS_Store
+*.prettierrc
+archive.zip
+public
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

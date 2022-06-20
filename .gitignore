@@ -3,7 +3,6 @@ dist
 .DS_Store
 *.prettierrc
 archive.zip
-public
 
 # IDE - VSCode
 .vscode/*

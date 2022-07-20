@@ -5,7 +5,7 @@ export const fetchCartData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://react-http-6bf30-default-rtdb.firebaseio.com/cart.json"
+        "https://hoisting-test-8cd02-default-rtdb.firebaseio.com/cart.json"
       );
 
       if (!response.ok) {
@@ -19,7 +19,12 @@ export const fetchCartData = () => {
 
     try {
       const cartData = await fetchData();
-      dispatch(shopingCartActions.replaceCart(cartData));
+      dispatch(
+        shopingCartActions.replaceCart({
+          items: cartData.items || [],
+          totalQuantity: cartData.totalQuantity,
+        })
+      );
     } catch (error) {
       dispatch(
         openCartActions.showNotification({
@@ -44,7 +49,7 @@ export const sendCartData = (cart) => {
 
     const sendRequset = async () => {
       const response = await fetch(
-        "https://react-http-6bf30-default-rtdb.firebaseio.com/cart.json",
+        "https://hoisting-test-8cd02-default-rtdb.firebaseio.com/cart.json",
         {
           method: "PUT",
           body: JSON.stringify(cart),

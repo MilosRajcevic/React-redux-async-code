@@ -6,7 +6,6 @@ import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const cartItems = useSelector((store) => store.shopingCart.items);
-  console.log(cartItems);
 
   return (
     <Card className={classes.cart}>
